@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Truck Report Pro</title>
+
+  <!-- ===== iPhone / iPad home-screen icon ===== -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Make the home-screen launch open in app mode so we can tell it apart
+       from a normal Safari visit (this is what makes navigator.standalone true). -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Android / Chrome home-screen icon (read from this manifest) -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Browser-tab favicon (desktop Chrome / Safari tab) -->
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+
+  <!-- Home-screen label + status bar look -->
+  <meta name="apple-mobile-web-app-title" content="Truck Report Pro">
+  <meta name="application-name" content="Truck Report Pro">
+  <meta name="theme-color" content="#0b1220">
+
+  <!--
+    ========================================================================
+    This copy points at the "TruckReport Pro Carlos" deployment (Carlos's own
+    dashboard). Change ONLY TARGET_URL and the button link below to retarget.
+    ========================================================================
+  -->
+  <script>
+    var TARGET_URL = "https://script.google.com/macros/s/AKfycbxYeMXFSfbZt9X6QXmcslpnFVlMPCOXb79r0tYaJjiFtXe2hkXr8wphgJTwbct73MbrUw/exec";
+
+    // Only auto-open the app when launched FROM the home-screen icon (standalone).
+    // In plain Safari we STAY here so "Add to Home Screen" captures this icon.
+    var launchedFromHomeScreen =
+      (window.navigator.standalone === true) ||
+      (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+
+    if (launchedFromHomeScreen) {
+      window.location.replace(TARGET_URL);
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(120% 120% at 50% 25%, #122747 0%, #0b1220 70%);
+      color: #eaf1fb;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 28px; min-height: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+    .logo {
+      width: 132px; height: 132px; border-radius: 30px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.5); margin-bottom: 20px;
+    }
+    h1 { font-size: 24px; font-weight: 800; margin: 0 0 6px; letter-spacing: -0.01em; }
+    .tag { font-size: 15px; color: #9db0c9; margin: 0 0 26px; }
+    .open-btn {
+      display: inline-block; background: #1f8e66; color: #fff; text-decoration: none;
+      font-size: 18px; font-weight: 800; padding: 15px 34px; border-radius: 14px;
+      box-shadow: 0 10px 24px rgba(31,142,102,0.4);
+    }
+    .open-btn:active { transform: translateY(1px); }
+    .hint {
+      margin-top: 30px; max-width: 340px; border: 1px dashed rgba(255,255,255,0.25);
+      border-radius: 14px; padding: 16px 18px; font-size: 14px; line-height: 1.5;
+      color: #b9c6d8;
+    }
+    .hint b { color: #eaf1fb; }
+  </style>
+</head>
+<body>
+  <img class="logo" src="icon-512.png" alt="Truck Report Pro">
+  <h1>Truck Report Pro</h1>
+  <p class="tag">Loads, fuel, miles &amp; expenses in one place.</p>
+
+  <a class="open-btn" href="https://script.google.com/macros/s/AKfycbxYeMXFSfbZt9X6QXmcslpnFVlMPCOXb79r0tYaJjiFtXe2hkXr8wphgJTwbct73MbrUw/exec">Open Truck Report Pro</a>
+
+  <div class="hint">
+    <b>Add it to your home screen:</b><br>
+    Tap the <b>Share</b> button (the box with an up-arrow) at the bottom of Safari,
+    then tap <b>&ldquo;Add to Home Screen.&rdquo;</b>
+  </div>
+</body>
+</html>
